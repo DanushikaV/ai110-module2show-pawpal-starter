@@ -5,12 +5,28 @@
 **a. Initial design**
 
 - Briefly describe your initial UML design.
-- What classes did you include, and what responsibilities did you assign to each?
+- What classes did you include, and what responsibilities did you assign to each? 
+
+Add and manage pets.
+Schedule pet care tasks such as feeding, walking, medication, or appointments.
+View today's scheduled tasks in priority order.
+
+My initial design focused on four main classes: Owner, Pet, Task, and Scheduler. The system was designed to allow users to add and manage pets, schedule pet care activities, and view daily tasks in a prioritized order.
+
+The Owner class stores information about the pet owner and manages the pets they own. The Pet class stores information about each pet and maintains a list of its care tasks. The Task class represents individual pet care activities such as feeding, walking, grooming, medication, or veterinary appointments, including details like due time, priority, completion status, and whether the task recurs. The Scheduler class is responsible for organizing tasks, sorting them by priority and due time, detecting scheduling conflicts, and generating a daily care schedule.
+
+This design separates responsibilities across different classes, making the system modular, easier to maintain, and easier to expand with additional features in the future.
+
+
 
 **b. Design changes**
 
 - Did your design change during implementation?
 - If yes, describe at least one change and why you made it.
+
+After reviewing my initial design with AI assistance, I identified potential issues with inconsistent relationships between classes. To improve this, I added a two way coonection between Owner–Pet and Pet–Task using assign_owner() and assign_pet() methods. This ensures that updates to one object are properly reflected in related objects, preventing data inconsistencies.
+
+These changes made the system more robust and reduced potential logical bottlenecks when managing relationships between owners, pets, and tasks.
 
 ---
 
